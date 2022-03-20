@@ -11,6 +11,17 @@
   </head>
 
   <body>
+    <% if notice %>
+      <%= notice %>
+    <% end %>
+
     <%= yield %>
+
+
+
+    <%# Футер %>
+    <h2>Узнать раньше всех о запуске проекта:</h2>
+    <%= render "subscribers/form" %>
+
   </body>
 </html>
