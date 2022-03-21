@@ -1,7 +1,13 @@
-<p>
+<!-- <p>
 	<b>Commenter:</b>
 	<%= comment.commenter %>
+</p> -->
+
+<p>
+  <b>Commenter:</b>
+  <%= User.find(comment.user_id).username %>
 </p>
+
 <p>
 	<b>Comment:</b>
 	<%= comment.body %>
