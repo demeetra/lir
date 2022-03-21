@@ -11,4 +11,7 @@ end
   get 'posts/index'
   root 'posts#index'
 
+  get 'users', to: 'users#index'
+  get 'users/:id' => 'users#show', :as => :user
+  delete 'users/:id', to: 'users#destroy'
 end
