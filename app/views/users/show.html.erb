@@ -2,6 +2,10 @@
 <p>Email <%= @user.email %></p>
 <p>Username <%= @user.username %></p>
 
+<% if user_signed_in? && current_user.isadmin == true %>
+  <p>Admin <%= @user.isadmin %></p>
+<% end %>
+
 <% if user_signed_in? && @user.id == current_user.id %>
 	<p><%= link_to 'Редактировать', edit_user_registration_path %></p>
 <% end %>
