@@ -1,4 +1,7 @@
-<p>ID <%= @user.id %></p>
+<% if user_signed_in? && current_user.isadmin == true %>
+  <p>ID <%= @user.id %></p>
+<% end %>
+
 <p>Email <%= @user.email %></p>
 <p>Username <%= @user.username %></p>
 
