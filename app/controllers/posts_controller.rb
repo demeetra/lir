@@ -4,8 +4,13 @@ class PostsController < ApplicationController
 
   # GET /posts or /posts.json
   def index
-    @posts = Post.all
-  end
+      if params.has_key?(:topic)
+        @topic = Topic.find_by_name(params[:topic])
+        @posts = Post.where(topic: @topic)
+      else
+        @posts = Post.all
+      end
+    end
 
   # GET /posts/1 or /posts/1.json
   def show

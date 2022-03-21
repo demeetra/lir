@@ -1,6 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Posts</h1>
+
+
+
+<% Topic.where(display_in_sidebar: true).each do |cat| %>
+<%= link_to cat.name, posts_path(topic: cat.name) %> |
+<% end %>|
+
 <%= link_to 'New Topic', new_topic_path %>
 <table>
   <thead>
