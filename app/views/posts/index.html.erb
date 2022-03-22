@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<h1>Запись</h1>
 
 
 
@@ -9,17 +9,17 @@
 <% end %>|
 
 <% if user_signed_in? %>
-  <%= link_to 'New Topic', new_topic_path %>
+  <%= link_to 'Создать новую тему', new_topic_path %>
 <% end %>
 
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Content</th>
-      <th>Date</th>
-      <th>Topic</th>
-      <th>Tag</th>
+      <th>Заголовок</th>
+      <th>Контент</th>
+      <th>Дата</th>
+      <th>Тема</th>
+      <th>Тэг</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -38,9 +38,9 @@
         <td>
 	         <%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Commentes'%>
         </td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Открыть', post %></td>
+        <td><%= link_to 'Редактировать', edit_post_path(post) %></td>
+        <td><%= link_to 'Удалить', post, method: :delete, data: { confirm: 'Уверены?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -48,4 +48,4 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'Создать пост +', new_post_path %>

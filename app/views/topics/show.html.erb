@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Name:</strong>
+  <strong>Название:</strong>
   <%= @topic.name %>
 </p>
 
 <p>
-  <strong>Display in sidebar:</strong>
+  <strong>Отображать в боковом меню:</strong>
   <%= @topic.display_in_sidebar %>
 </p>
 
-<%= link_to 'Edit', edit_topic_path(@topic) %> |
-<%= link_to 'Back', topics_path %>
+<%= link_to 'Редактировать', edit_topic_path(@topic) %> |
+<%= link_to 'Назад', topics_path %>

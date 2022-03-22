@@ -14,7 +14,7 @@ class TopicsTest < ApplicationSystemTestCase
     visit topics_url
     click_on "New Topic"
 
-    check "Display in sidebar" if @topic.display_in_sidebar
+    check "Отображать в боковом меню" if @topic.display_in_sidebar
     fill_in "Name", with: @topic.name
     click_on "Create Topic"
 
@@ -26,7 +26,7 @@ class TopicsTest < ApplicationSystemTestCase
     visit topics_url
     click_on "Edit", match: :first
 
-    check "Display in sidebar" if @topic.display_in_sidebar
+    check "Отображать в боковом меню" if @topic.display_in_sidebar
     fill_in "Name", with: @topic.name
     click_on "Update Topic"
 
