@@ -1,0 +1,45 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ports</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Address</th>
+      <th>Tel</th>
+      <th>Coordinates</th>
+      <th>Rating</th>
+      <th>Cost</th>
+      <th>Electric</th>
+      <th>Wather</th>
+      <th>Workload</th>
+      <th>Comfort time</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ports.each do |port| %>
+      <tr>
+        <td><%= port.name %></td>
+        <td><%= port.address %></td>
+        <td><%= port.tel %></td>
+        <td><%= port.coordinates %></td>
+        <td><%= port.rating %></td>
+        <td><%= port.cost %></td>
+        <td><%= port.electric %></td>
+        <td><%= port.wather %></td>
+        <td><%= port.workload %></td>
+        <td><%= port.comfort_time %></td>
+        <td><%= link_to 'Show', port %></td>
+        <td><%= link_to 'Edit', edit_port_path(port) %></td>
+        <td><%= link_to 'Destroy', port, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Port', new_port_path %>

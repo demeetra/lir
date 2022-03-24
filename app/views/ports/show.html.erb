@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @port.name %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @port.address %>
+</p>
+
+<p>
+  <strong>Tel:</strong>
+  <%= @port.tel %>
+</p>
+
+<p>
+  <strong>Coordinates:</strong>
+  <%= @port.coordinates %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @port.rating %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @port.cost %>
+</p>
+
+<p>
+  <strong>Electric:</strong>
+  <%= @port.electric %>
+</p>
+
+<p>
+  <strong>Wather:</strong>
+  <%= @port.wather %>
+</p>
+
+<p>
+  <strong>Workload:</strong>
+  <%= @port.workload %>
+</p>
+
+<p>
+  <strong>Comfort time:</strong>
+  <%= @port.comfort_time %>
+</p>
+
+<%= link_to 'Edit', edit_port_path(@port) %> |
+<%= link_to 'Back', ports_path %>

@@ -18,6 +18,8 @@
 
   <body>
     <div class="top_menu">
+      <%= link_to 'Порты', ports_path %>
+      <%= link_to 'Форум', posts_path %>
   <% if user_signed_in? %>
       <%= link_to 'Личный кабинет', current_user %> | <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
   <% else %>
