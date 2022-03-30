@@ -6,9 +6,9 @@ class SubscribersController < ApplicationController
   def create
     @subscriber = Subscriber.new(subscriber_params)
     if @subscriber.save
-      redirect_to about_path, notice: "Ура!"
+      redirect_back fallback_location: root_path, notice: "Ура!"
     else
-      redirect_to about_path, notice: "Не ура("
+      redirect_back fallback_location: root_path, notice: "Не ура("
     end
   end
 

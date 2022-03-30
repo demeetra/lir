@@ -13,6 +13,39 @@
  *= require_tree .
  *= require_self
  */
+ @font-face {
+  font-family: 'Lora-Regular';
+  src: url('Lora-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+ font-family: 'Lora-Bold';
+ src: url('Lora-Bold.ttf') format('truetype');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'Proxima-Nova-Bold';
+ src: url('Proxima-Nova-Bold.otf') format('opentype');
+ font-weight: normal;
+ font-style: normal;
+}
+@font-face {
+ font-family: 'Proxima-Nova-Regular';
+ src: url('Proxima-Nova-Regular.otf') format('opentype');
+ font-weight: normal;
+ font-style: normal;
+}
+h1{
+  font-family: 'Proxima-Nova-Bold';
+  font-size: 46pt;
+  color: #11404F;
+}
+h2{
+  font-family: Lora-Regular;
+  font-size: 24pt;
+}
  .top_menu {
    display: flex;
    justify-content: flex-end;
@@ -25,4 +58,20 @@
  }
  .top_menu a {
    margin: 0 20px;
+ }
+
+ .primary_button{
+   background-color: #336DE5;
+   color: white;
+   border: none;
+ }
+ .primary_button:hover{
+   background-color: #205C8F;
+ }
+ .primary_button:click{
+   background-color: #11404F;
+ }
+ .secondary_button{
+   background-color: white;
+   color: #11404F;
  }
