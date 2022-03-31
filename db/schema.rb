@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_03_31_114201) do
+ActiveRecord::Schema.define(version: 2022_03_31_173545) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+    t.boolean "display_in_sidebar", default: true
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.string "commenter"
@@ -66,6 +73,8 @@ ActiveRecord::Schema.define(version: 2022_03_31_114201) do
     t.string "image"
     t.integer "user_id", null: false
     t.integer "topic_id", null: false
+    t.integer "category_id", null: false
+    t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["topic_id"], name: "index_posts_on_topic_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
@@ -112,6 +121,7 @@ ActiveRecord::Schema.define(version: 2022_03_31_114201) do
   add_foreign_key "favorites", "users"
   add_foreign_key "likes", "posts"
   add_foreign_key "likes", "users"
+  add_foreign_key "posts", "categories"
   add_foreign_key "posts", "topics"
   add_foreign_key "posts", "users"
   add_foreign_key "unlikes", "posts"

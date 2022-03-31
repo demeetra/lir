@@ -7,6 +7,9 @@ class PostsController < ApplicationController
       if params.has_key?(:topic)
         @topic = Topic.find_by_name(params[:topic])
         @posts = Post.where(topic: @topic)
+      elsif params.has_key?(:category)
+        @category = Category.find_by_name(params[:category])
+        @posts = Post.where(category: @category)
       else
         @posts = Post.all
       end
@@ -71,6 +74,6 @@ class PostsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def post_params
-      params.require(:post).permit(:title, :author, :content, :date, :topic_id, :image)
+      params.require(:post).permit(:title, :author, :content, :date, :topic_id, :category_id, :image)
     end
 end

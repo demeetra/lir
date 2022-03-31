@@ -19,6 +19,10 @@
   <strong>Темы:</strong>
   <%= @post.topic.name %>
 </p>
+<p>
+  <strong>Category:</strong>
+  <%= @post.category.name %>
+</p>
 
 
 <%= image_tag(@post.image.url, alt: 'Фото') if @post.image? %>

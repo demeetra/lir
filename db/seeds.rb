@@ -15,6 +15,12 @@ admin = User.create!({
 })
 users = [
 	{
+			username: "Demeetra",
+			email: "navasilenko@edu.hse.ru",
+			password: '111111',
+			password_confirmation: '111111'
+	},
+	{
 			username: "Александр Петров",
 			email: "avpetrov@ya.ru",
 			password: '111111',
@@ -77,6 +83,32 @@ topics.each do |topic|
 end
 stopics = Topic.all.collect{|t| t.id}
 
+Category.destroy_all
+puts "Destroyed all categories"
+categories = [
+	{
+		name: "Порт",
+		display_in_sidebar: true,
+	},
+	{
+		name: "Вопросы",
+		display_in_sidebar: true,
+	},
+	{
+		name: "ЧП",
+		display_in_sidebar: true,
+	},
+	{
+		name: "Новость",
+		display_in_sidebar: true,
+	}
+]
+categories.each do |category|
+	Category.create!(category)
+end
+scategorys = Category.all.collect{|c| c.id}
+
+
 Comment.destroy_all
 Post.destroy_all
 puts "Destroyed everything you touch"
@@ -93,6 +125,7 @@ posts = [
 	  created_at: 0,
 		updated_at: 0,
 		topic_id: stopics.sample,
+		category_id: scategorys.sample,
 		comments: ["Ужас...", "Кошмар"],
 	},
 	{
@@ -103,6 +136,7 @@ posts = [
 		created_at: 0,
 		updated_at: 0,
 		topic_id: stopics.sample,
+		category_id: scategorys.sample,
 	},
 	{
 		title: "В Италии задержали два судна компании Palmali",
@@ -112,6 +146,7 @@ posts = [
 		created_at: 0,
 		updated_at: 0,
 		topic_id: stopics.sample,
+		category_id: scategorys.sample,
 	},
 	{
 		title: "Евросоюз опубликовал руководство по работе круизных судов в условиях пандемии COVID-19 🦠",
@@ -122,6 +157,7 @@ posts = [
 		created_at: 0,
 		updated_at: 0,
 		topic_id: stopics.sample,
+		category_id: scategorys.sample,
 	},
 	{
 		title: "Турецкая верфь Tersan Shipyard готовит к спуску на воду круизное судно на электротяге для норвежской компании Havila shipping",
@@ -132,6 +168,7 @@ posts = [
 		created_at: 0,
 		updated_at: 0,
 		topic_id: stopics.sample,
+		category_id: scategorys.sample,
 	},
 	{
 		title: "Кранец у Ля Рошеля",
@@ -140,6 +177,7 @@ posts = [
 		created_at: 0,
 		updated_at: 0,
 		topic_id: stopics.sample,
+		category_id: scategorys.sample,
 	}
 ]
 posts.each do |post|
