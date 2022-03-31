@@ -20,10 +20,6 @@
   <%= @post.topic.name %>
 </p>
 
-<p>
-  <strong>Тэг:</strong>
-  <%= @post.tag %>
-</p>
 
 <%= image_tag(@post.image.url, alt: 'Фото') if @post.image? %>
 <% if user_signed_in? %>

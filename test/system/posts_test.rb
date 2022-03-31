@@ -16,7 +16,6 @@ class PostsTest < ApplicationSystemTestCase
 
     fill_in "Content", with: @post.content
     fill_in "Date", with: @post.date
-    fill_in "Tag", with: @post.tag
     fill_in "Title", with: @post.title
     click_on "Create Post"
 
@@ -30,7 +29,6 @@ class PostsTest < ApplicationSystemTestCase
 
     fill_in "Content", with: @post.content
     fill_in "Date", with: @post.date
-    fill_in "Tag", with: @post.tag
     fill_in "Title", with: @post.title
     click_on "Update Post"
 

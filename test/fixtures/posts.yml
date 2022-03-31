@@ -5,11 +5,9 @@ one:
   title: MyString
   content: MyText
   date: 2022-03-20
-  tag: MyString
 
 two:
   name: MyString
   title: MyString
   content: MyText
   date: 2022-03-20
-  tag: MyString

@@ -60,7 +60,6 @@ ActiveRecord::Schema.define(version: 2022_03_31_114201) do
     t.string "title"
     t.text "content"
     t.date "date"
-    t.string "tag"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "author"
