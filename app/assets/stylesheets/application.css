@@ -37,6 +37,9 @@
  font-weight: normal;
  font-style: normal;
 }
+body{
+  color: #11404F;
+}
 h1{
   font-family: Proxima-Nova-Bold;
   font-size: 46pt;
@@ -50,7 +53,8 @@ h3{
   font-family: Proxima-Nova-Regular;
   font-size: 18pt;
 }
-button h3{
+button > h3{
+  margin: 0;
   font-family: Proxima-Nova-Bold;
 
 }
@@ -90,6 +94,18 @@ h4{
    background-color: #11404F;
  }
  .secondary_button{
+   font-family: Proxima-Nova-Regular;
+   font-size: 18pt;
    background-color: white;
    color: #11404F;
+   border: 2px solid #11404F;
+   width: 170px;
+   height: 42px;
+ }
+ .secondary_button:hover{
+   background-color: #EAEAEA;
+ }
+ .secondary_button:active{
+   background-color: #11404F;
+   color: white;
  }

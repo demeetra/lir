@@ -5,9 +5,9 @@ import A_Button_Footer from "./A_Button_Footer"
 class MSubscribeFooter extends React.Component {
   render () {
     return (
-      <div>
+      <div className="subscriber_footer">
         <h2>Подписаться на новости:</h2>
-        <input
+        <input className="input_footer"
           type="email"
           placeholder="example@mail.ru"
           name="subscriber[email]"
