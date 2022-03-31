@@ -10,7 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
+
  *= require_self
  */
  @font-face {
@@ -38,13 +38,29 @@
  font-style: normal;
 }
 h1{
-  font-family: 'Proxima-Nova-Bold';
+  font-family: Proxima-Nova-Bold;
   font-size: 46pt;
   color: #11404F;
 }
 h2{
   font-family: Lora-Regular;
   font-size: 24pt;
+}
+h3{
+  font-family: Proxima-Nova-Regular;
+  font-size: 18pt;
+}
+button h3{
+  font-family: Proxima-Nova-Bold;
+
+}
+p{
+  font-family: Proxima-Nova-Regular;
+  font-size: 14pt;
+}
+h4{
+  font-family: Proxima-Nova-Regular;
+  font-size: 12pt;
 }
  .top_menu {
    display: flex;
@@ -64,11 +80,13 @@ h2{
    background-color: #336DE5;
    color: white;
    border: none;
+   width: 316px;
+   height: 56px;
  }
  .primary_button:hover{
    background-color: #205C8F;
  }
- .primary_button:click{
+ .primary_button:active{
    background-color: #11404F;
  }
  .secondary_button{

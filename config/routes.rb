@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'main/index'
   resources :ports
   resources :topics
   devise_for :users
@@ -10,8 +11,8 @@ Rails.application.routes.draw do
 end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 
-  get 'posts/index'
-  root 'posts#index'
+  get 'main/index'
+  root 'main#index'
 
   get 'users', to: 'users#index'
   get 'users/:id' => 'users#show', :as => :user
