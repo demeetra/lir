@@ -29,13 +29,22 @@
 <% if user_signed_in? %>
   <% pre_like = @post.likes.find { |like| like.user_id == current_user.id} %>
   <% if pre_like %>
-    <%= button_to 'Unlike', post_like_path(@post, pre_like), method: :delete %>
+    <%= button_to 'Актуально', post_like_path(@post, pre_like), method: :delete %>
   <% else %>
-    <%= button_to 'Like', post_likes_path(@post), method: :post %>
+    <%= button_to 'Актуально', post_likes_path(@post), method: :post %>
+  <% end %>
+<% end %>
+<% if user_signed_in? %>
+  <% pre_unlike = @post.unlikes.find { |unlike| unlike.user_id == current_user.id} %>
+  <% if pre_unlike %>
+    <%= button_to 'Не актуально', post_unlike_path(@post, pre_unlike), method: :delete %>
+  <% else %>
+    <%= button_to 'Не актуально', post_unlikes_path(@post), method: :post %>
   <% end %>
 <% end %>
 
 <p><%= @post.likes.count %> <%= (@post.likes.count) == 1 ? 'Like' : 'Likes'%></p>
+<p><%= @post.unlikes.count %> <%= (@post.unlikes.count) == 1 ? 'UnLike' : 'UnLikes'%></p>
 <p><%= @post.comments.count %> <%= (@post.comments.count) == 1 ? 'Comment' : 'Comments'%></p>
 <% if user_signed_in? %>
   <% pre_favorite = @post.favorites.find { |favorite| favorite.user_id == current_user.id} %>
