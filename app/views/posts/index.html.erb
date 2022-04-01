@@ -1,55 +1,39 @@
-<h1>Запись</h1>
+<%= stylesheet_link_tag 'posts', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+<div class="sidebar">
+  <% Category.where(display_in_sidebar: true).each do |cat| %>
+    <%= link_to cat.name, posts_path(category: cat.name) %> |
+  <% end %>|
 
-<% Category.where(display_in_sidebar: true).each do |cat| %>
-  <%= link_to cat.name, posts_path(category: cat.name) %> |
-<% end %>|
+  <% if user_signed_in? && current_user.isadmin == true %>
+    <%= link_to 'Создать новый тэг', new_category_path %>
+  <% end %>
+  <br>
+  <br>
+  <% Topic.where(display_in_sidebar: true).each do |cat| %>
+    <%= link_to cat.name, posts_path(topic: cat.name) %> |
+  <% end %>|
 
-<% if user_signed_in? && current_user.isadmin == true %>
-  <%= link_to 'Создать новый тэг', new_category_path %>
-<% end %>
-<br>
-<% Topic.where(display_in_sidebar: true).each do |cat| %>
-  <%= link_to cat.name, posts_path(topic: cat.name) %> |
-<% end %>|
+  <% if user_signed_in? %>
+    <%= link_to 'Создать новую тему', new_topic_path %>
+  <% end %>
+  <%= react_component 'A_P_Post_Creation', { href: new_post_path } %>
+</div>
 
-<% if user_signed_in? %>
-  <%= link_to 'Создать новую тему', new_topic_path %>
-<% end %>
+  <% @posts.each do |post| %>
+      <div class="post_card">
+<h3><%= post.category.name %></h3>
+              <h3><%= post.topic.name %></h3>
+              <h1><%= post.title %></h1>
+              <p><%= post.content %></p>
+              <h4><%= post.date %></h4>
 
-<table>
-  <thead>
-    <tr>
-      <th>Заголовок</th>
-      <th>Контент</th>
-      <th>Дата</th>
-      <th>Тема</th>
-      <th>Тэг</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+              <%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Comments'%>
 
-  <tbody>
-    <% @posts.each do |post| %>
-      <tr>
-        <td><%= post.title %></td>
-        <td><%= post.content %></td>
-        <td><%= post.date %></td>
-        <td><%= post.topic.name %></td>
-        <td><%= post.category.name %></td>
-        <td>
-	          <%= post.likes.count %> <%= (post.likes.count) == 1 ? 'Like' : 'Likes'%>
-        </td>
-        <td>
-	         <%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Comments'%>
-        </td>
-        <td><%= link_to 'Открыть', post %></td>
-        <td><%= link_to 'Редактировать', edit_post_path(post) %></td>
-        <td><%= link_to 'Удалить', post, method: :delete, data: { confirm: 'Уверены?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-<%= react_component 'A_P_Post_Creation', { href: new_post_path } %>
+            <div class="buttons_post_card">
+              <%= react_component 'A_S_Open_Post', { href: post } %>
+              <%= react_component 'A_S_Edit_Post', { href: edit_post_path(post) } %>
+              <%= react_component 'A_S_Delete_Post', post, method: :delete, data: { confirm: 'Уверены?' } %>
+            </div>
+      </div>
+  <% end %>

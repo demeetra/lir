@@ -1,13 +1,16 @@
 // Place all the styles related to the Subscribers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
-
+// *= require_self
 h2{
-  font-family: Proxima-Nova-Bold;
+
 }
 .subscriber_footer{
   float: right;
   text-align: right;
+}
+.subscriber_footer >h2{
+  font-family: Proxima-Nova-Bold;
 }
 .input_footer{
   font-family: Proxima-Nova-Regular;

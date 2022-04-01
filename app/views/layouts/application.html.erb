@@ -10,34 +10,42 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+
+
+  <body>
+    <div class="top_menu">
+      <%= react_component 'A_T_Ports', { href: ports_path } %>
+      <%= react_component 'A_T_Posts', { href: posts_path } %>
+<div class="top_menu_accaunt">
+  <% if user_signed_in? %>
+            <h2><%= link_to 'Личный кабинет', current_user %></h2> |
+            <h2><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></h2>
+        <% else %>
+          <h2><%= link_to 'Войти', new_user_session_path %><h2> |
+            <h2><%= link_to 'Регистрация', new_user_registration_path %></h2>
+        <% end %>
+
+      </div>
+    </div>
+
+<div class="content">
+
   <% if notice %>
     <p class="notice"><%= notice %></p>
   <% elsif alert %>
     <p class="alert"><%= alert %></p>
   <% end %>
 
-  <body>
-    <div class="top_menu">
-      <%= link_to 'Порты', ports_path %>
-      <%= link_to 'Форум', posts_path %>
-  <% if user_signed_in? %>
-      <%= link_to 'Личный кабинет', current_user %> | <%= link_to 'Выйти', destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to 'Войти', new_user_session_path %> | <%= link_to 'Регистрация', new_user_registration_path %>
-  <% end %>
+    <%= yield %>
 </div>
 
-    <%# if notice %>
-      <%#= notice %>
-    <%# end %>
-
-    <%= yield %>
 
 
 
-    <%# Футер %>
-    
-    <%= render "subscribers/form" %>
+    <div class="footer">
+      <%= render "subscribers/form" %>
+
+    </div>
 
   </body>
 </html>

@@ -1,3 +1,31 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+ //*= require_self
+
+.post_card{
+  position: relative;
+  display: inline-block;
+  background-color: white;
+  border: #EAEAEA solid 1px;
+  width: 985px;
+  float: right;
+  padding: 35px 20px;
+  margin: 10px 20px;
+}
+.sidebar{
+  position: fixed;
+  background-color: white;
+  width: 315px;
+  height: 664px;
+  float: left;
+}
+.post_card > h3{
+  display: inline-block;
+  float: right;
+  margin-left: 40px;
+}
+
+.buttons_post_card{
+  width: 100%;
+}

@@ -40,7 +40,7 @@ def M_Actuality_params()
 			params["pre_like_method"] = :delete
 			params["pre_like_action"] = post_like_path(@post, params["pre_like"])
 		else
-			params["pre_like_value"] = "Нет"
+			params["pre_like_value"] = "Да"
 			params["pre_like_method"] = :post
 			params["pre_like_action"] = post_likes_path(@post)
 		end
@@ -48,7 +48,7 @@ def M_Actuality_params()
 		params["pre_unlike_count"] = @post.unlikes.count
 		params["pre_unlike_amount"] = (@post.unlikes.count) == 1 ? 'UnLike' : 'UnLikes'
 		if params["pre_unlike"]
-			params["pre_unlike_value"] = "Да"
+			params["pre_unlike_value"] = "Нет"
 			params["pre_unlike_method"] = :delete
 			params["pre_unlike_action"] = post_unlike_path(@post, params["pre_unlike"])
 		else
@@ -60,6 +60,7 @@ def M_Actuality_params()
 	return params
 end
 %>
+
 <%= react_component 'M_Actuality', M_Actuality_params() %>
 
 <p><%= @post.comments.count %> <%= (@post.comments.count) == 1 ? 'Comment' : 'Comments'%></p>
