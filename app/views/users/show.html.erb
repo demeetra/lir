@@ -12,7 +12,7 @@
 <% if user_signed_in? && @user.id == current_user.id %>
 	<p><%= link_to 'Редактировать', edit_user_registration_path %></p>
 <% end %>
-
+<h2><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></h2>
 In favorites <%= @user.favorites.count %> <%= (@user.favorites.count) == 1 ? 'Post' : 'Posts'%>
 <% @posts.each do |post| %>
   <br><%= link_to post.title, post %>

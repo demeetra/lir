@@ -8,24 +8,64 @@
   display: inline-block;
   background-color: white;
   border: #EAEAEA solid 1px;
-  width: 985px;
+  width: 72%;
   float: right;
   padding: 35px 20px;
   margin: 10px 20px;
 }
 .sidebar{
+  top: 130px;
   position: fixed;
   background-color: white;
-  width: 315px;
-  height: 664px;
+  padding-left: 1%;
+  width: 20%;
+  height: 100%;
   float: left;
+}
+.post_card > h1{
+  margin-top: 0;
 }
 .post_card > h3{
   display: inline-block;
   float: right;
   margin-left: 40px;
 }
+.post_card > div{
+  display: flex;
+  float: left;
+  width: 100%;
+}
 
+.post_card_hover:hover{
+  cursor: pointer;
+}
 .buttons_post_card{
   width: 100%;
+  display: inline-block;
+}
+.buttons_post_card > div{
+  display: inline-block;
+}
+.post_card > img{
+  margin-right: 20px;
+  margin-bottom: 20px;
+  float: left;
+  width: 380px;
+  height: 255px;
+}
+.post_card_show{
+  float: left;
+}
+.category{
+
+    padding: 3% 10%;
+    border: #EAEAEA solid 1px;
+}
+.category > h3{
+  display: inline-block;
+  margin: 0;
+  text-decoration: none;
+}
+.comments_posts{
+  flex-direction: column;
 }

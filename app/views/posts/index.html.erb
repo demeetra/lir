@@ -1,39 +1,48 @@
 <%= stylesheet_link_tag 'posts', media: 'all', 'data-turbolinks-track': 'reload' %>
 
 <div class="sidebar">
-  <% Category.where(display_in_sidebar: true).each do |cat| %>
-    <%= link_to cat.name, posts_path(category: cat.name) %> |
-  <% end %>|
+  <section class="category">
+    <% Category.where(display_in_sidebar: true).each do |cat| %>
+      <h3 class="thirdly_button"><%= link_to cat.name, posts_path(category: cat.name) %></h3>
+    <% end %>
 
-  <% if user_signed_in? && current_user.isadmin == true %>
-    <%= link_to 'Создать новый тэг', new_category_path %>
-  <% end %>
-  <br>
-  <br>
-  <% Topic.where(display_in_sidebar: true).each do |cat| %>
-    <%= link_to cat.name, posts_path(topic: cat.name) %> |
-  <% end %>|
+    <% if user_signed_in? && current_user.isadmin == true %>
+      <%= react_component 'A_S_Add_Category', { href: new_category_path } %>
+    <% end %>
+</section>
 
-  <% if user_signed_in? %>
-    <%= link_to 'Создать новую тему', new_topic_path %>
-  <% end %>
+<section class="category">
+    <% Topic.where(display_in_sidebar: true).each do |cat| %>
+      <h3 class="thirdly_button"><%= link_to cat.name, posts_path(topic: cat.name) %></h3>
+    <% end %>
+
+    <% if user_signed_in? %>
+    <%= react_component 'A_S_Add_Topic', { href: new_topic_path } %>
+    <% end %>
+
+  </section>
   <%= react_component 'A_P_Post_Creation', { href: new_post_path } %>
 </div>
 
   <% @posts.each do |post| %>
-      <div class="post_card">
-<h3><%= post.category.name %></h3>
+      <div class="post_card post_card_hover" onclick="location.href='<%=post_path(post)%>';">
+
+              <h3><%= post.category.name %></h3>
               <h3><%= post.topic.name %></h3>
-              <h1><%= post.title %></h1>
-              <p><%= post.content %></p>
+              <h4><%= post.author %></h4>
               <h4><%= post.date %></h4>
+              <%= image_tag(post.image.url, alt: 'Фото') if post.image? %>
+              <h1><%= truncate(post.title, length: 40, separator: ' ', escape: false) %></h1>
 
-              <%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Comments'%>
+              <p><%= truncate(post.content, length: 150, separator: ' ') %></p>
 
+              <h4><%= post.comments.count %> <%= (post.comments.count) == 1 ? 'Comment' : 'Comments'%></h4>
+
+          <% if user_signed_in? && current_user.isadmin == true %>
             <div class="buttons_post_card">
-              <%= react_component 'A_S_Open_Post', { href: post } %>
               <%= react_component 'A_S_Edit_Post', { href: edit_post_path(post) } %>
-              <%= react_component 'A_S_Delete_Post', post, method: :delete, data: { confirm: 'Уверены?' } %>
+              <%= react_component 'A_S_Delete_Post', { href: post_path(post), method: :delete, value: 'Удалить', confirm: 'Уверены?' } %>
             </div>
+          <% end %>
       </div>
   <% end %>

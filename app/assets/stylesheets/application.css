@@ -42,16 +42,17 @@ body{
 }
 h1{
   font-family: Proxima-Nova-Bold;
-  font-size: 46pt;
+  font-size: 46px;
   color: #11404F;
+  line-height: 105.5%;
 }
 h2{
   font-family: Lora-Regular;
-  font-size: 24pt;
+  font-size: 24px;
 }
 h3{
   font-family: Proxima-Nova-Regular;
-  font-size: 18pt;
+  font-size: 18px;
 }
 button > h3{
   margin: 0;
@@ -60,19 +61,25 @@ button > h3{
 }
 p{
   font-family: Proxima-Nova-Regular;
-  font-size: 14pt;
+  font-size: 14px;
 }
 h4{
   font-family: Proxima-Nova-Regular;
-  font-size: 12pt;
+  font-size: 12px;
 }
  .top_menu {
+   margin: 0 40px;
+   top: 0;
+   z-index: 2;
+   position: fixed;
    display: flex;
    justify-content: space-around;
    align-items: center;
    width: 100%;
-   height: 60px;
+   height: 110px;
+   background-color: white;
    margin-bottom: 40px;
+   border-left: #11404F solid 2px;
    border-bottom: #11404F solid 2px;
  }
  .top_menu_accaunt{
@@ -88,13 +95,17 @@ h4{
  .top_menu_button:hover{
    color: #A9A9A9;
  }
+ .top_menu_button:active{
+   color: #336DE5;
+ }
 
  .primary_button{
    background-color: #336DE5;
    color: white;
    border: none;
-   width: 316px;
-   height: 56px;
+   width: auto;
+   height: auto;
+   padding: 10px 20px;
  }
  .primary_button:hover{
    background-color: #205C8F;
@@ -121,22 +132,31 @@ h4{
    background-color: #11404F;
    color: white;
  }
- .thirdly_button{
+ .thirdly_button a{
    background: none;
    border: none;
+   text-decoration: none;
    color: #11404F;
  }
- .thirdly_button:hover{
+ .thirdly_button a:hover{
    color: #A9A9A9;
  }
  .content{
-   width: 100%;
-   height: 100%;
+   margin: 0 40px;
+   padding: 20px;
+   padding-top: 120px;
+   z-index: 1;
+   border-left: #11404F solid 2px;
+   width: fit-content;
+   height: auto;
+   display: inline-block;
  }
 
 .footer{
   width: 100%;
-  height: auto;
+  height: 200px;
   position: relative;
   display: inline-block;
+  background-color: white;
+  border-top: #11404F solid 2px;
 }

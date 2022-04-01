@@ -3,7 +3,10 @@ import PropTypes from "prop-types"
 class ASDeletePost extends React.Component {
   render () {
     return (
-        <button className="secondary_button" onClick={event =>  window.location.href=this.props.href}><h3>Удалить</h3></button>
+        <form className="button_to" method="post" action={this.props.href}>
+          <input className="secondary_button" type="submit" value={this.props.value} data-confirm={this.props.confirm} />
+          <input type="hidden" name="_method" value={this.props.method} autoComplete="off" />
+        </form>
     );
   }
 }

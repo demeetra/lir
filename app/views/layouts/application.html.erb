@@ -14,21 +14,20 @@
 
   <body>
     <div class="top_menu">
+      <%= image_tag  'logo.svg' %>
       <%= react_component 'A_T_Ports', { href: ports_path } %>
       <%= react_component 'A_T_Posts', { href: posts_path } %>
 <div class="top_menu_accaunt">
   <% if user_signed_in? %>
-            <h2><%= link_to 'Личный кабинет', current_user %></h2> |
-            <h2><%= link_to 'Выйти', destroy_user_session_path, method: :delete %></h2>
+            <%= react_component 'A_T_Account', { href: user_path(current_user) } %>
         <% else %>
-          <h2><%= link_to 'Войти', new_user_session_path %><h2> |
-            <h2><%= link_to 'Регистрация', new_user_registration_path %></h2>
+        <%= react_component 'A_P_Log_In', { href: new_user_session_path } %>
         <% end %>
 
       </div>
     </div>
 
-<div class="content">
+<section class="content">
 
   <% if notice %>
     <p class="notice"><%= notice %></p>
@@ -37,7 +36,8 @@
   <% end %>
 
     <%= yield %>
-</div>
+
+</section>
 
 
 
