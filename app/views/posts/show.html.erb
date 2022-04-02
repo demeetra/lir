@@ -50,18 +50,12 @@ def A_Star_params()
 end
 %>
 <div class="post_card post_card_show">
-
-
-
-	<h3><%= @post.category.name %></h3>
+<h3><%= @post.category.name %></h3>
 	<h3><%= @post.topic.name %></h3>
 	<h4><%= @post.author %></h4>
 	<h4><%= l(@post.created_at, format: "%d.%m.%Y %H:%M") %></h4>
 	<h1><%= truncate(@post.title,length:300, escape: false) %></h1>
 	<p><%= @post.content %></p>
-
-
-
 
 	<%= image_tag(@post.image.url, alt: 'Фото') if @post.image? %>
 
@@ -70,8 +64,6 @@ end
 <div class="comments_posts">
 
 	<h4><%= @post.comments.count %> <%= (@post.comments.count) == 1 ? 'Comment' : 'Comments'%></h4>
-
-
 
 	<h3>Комментарии</h3>
 	<%= render @post.comments %>
