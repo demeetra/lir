@@ -31,12 +31,32 @@ def M_Actuality_params()
 	end
 	return params
 end
+def A_Star_params()
+	params = {}
+	params["user_signed_in"] = user_signed_in?
+	if params["user_signed_in"]
+		params["pre_favorite"] = @post.favorites.find { |favorite| favorite.user_id == current_user.id}
+		if params["pre_favorite"]
+			params["action"] = post_favorite_path(@post, params["pre_favorite"])
+			params["method"] = :delete
+			params["value"] = 'Удалить из Любимых'
+		else
+			params["action"] = post_favorites_path(@post)
+			params["method"] = :post
+			params["value"] = 'Добавить в любимые'
+		end
+	end
+	return params
+end
 %>
 <div class="post_card post_card_show">
+
+
+
 	<h3><%= @post.category.name %></h3>
 	<h3><%= @post.topic.name %></h3>
 	<h4><%= @post.author %></h4>
-	<h4><%= @post.date %></h4>
+	<h4><%= l(@post.created_at, format: "%d.%m.%Y %H:%M") %></h4>
 	<h1><%= truncate(@post.title,length:300, escape: false) %></h1>
 	<p><%= @post.content %></p>
 
@@ -46,23 +66,16 @@ end
 	<%= image_tag(@post.image.url, alt: 'Фото') if @post.image? %>
 
 	<%= react_component 'M_Actuality', M_Actuality_params() %>
-
+	<%= react_component 'A_Star', A_Star_params() %>
 <div class="comments_posts">
 
-	<p><%= @post.comments.count %> <%= (@post.comments.count) == 1 ? 'Comment' : 'Comments'%></p>
-	<% if user_signed_in? %>
-	  <% pre_favorite = @post.favorites.find { |favorite| favorite.user_id == current_user.id} %>
-	  <% if pre_favorite %>
-	      <%= button_to 'Удалить из Любимых', post_favorite_path(@post, pre_favorite), method: :delete %>
-	  <% else %>
-	      <%= button_to 'Добавить в любимые', post_favorites_path(@post), method: :post %>
-	  <% end %>
-	<% end %>
+	<h4><%= @post.comments.count %> <%= (@post.comments.count) == 1 ? 'Comment' : 'Comments'%></h4>
 
-	<h2>Комментарии</h2>
+
+
+	<h3>Комментарии</h3>
 	<%= render @post.comments %>
 
-	<h2>Оставить комментарий</h2>
 
 	<% if user_signed_in? %>
 	<%= render "comments/form" %>
@@ -73,8 +86,9 @@ end
 	</div>
 
 	<% if user_signed_in? %>
-	<%= link_to 'Редактировать', edit_post_path(@post) %> 
+	<div class="buttons_post_card">
+		<%= react_component 'A_S_Edit_Post', { href: edit_post_path(@post) } %>
+	</div>
 	<% end %>
 
-	<%= link_to 'Назад', posts_path %>
 </div>

@@ -185,6 +185,8 @@ posts.each do |post|
 	user = User.all.sample
 	post["user_id"] = user.id
 	post["author"] = user.username
+	post["created_at"] = (rand*10).days.ago
+	post["updated_at"] = post["created_at"]
 	comments = []
 	if post.key?(:comments)
 		comments = post[:comments]
@@ -202,6 +204,8 @@ posts.each do |post|
 			created_at: 0,
 			updated_at: 0,
 		}
+		comment["created_at"] = (rand*10).days.ago
+		comment["updated_at"] = comment["created_at"]
 		Comment.create!(comment)
 	end
 end

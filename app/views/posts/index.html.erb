@@ -30,7 +30,7 @@
               <h3><%= post.category.name %></h3>
               <h3><%= post.topic.name %></h3>
               <h4><%= post.author %></h4>
-              <h4><%= post.date %></h4>
+              <h4><%= l(post.created_at, format: "%d.%m.%Y %H:%M") %></h4>
               <%= image_tag(post.image.url, alt: 'Фото') if post.image? %>
               <h1><%= truncate(post.title, length: 40, separator: ' ', escape: false) %></h1>
 

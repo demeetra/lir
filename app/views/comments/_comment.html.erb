@@ -3,10 +3,10 @@
 	<%= comment.commenter %>
 </p> -->
 
-<p>
+<h4>
   <%= User.find(comment.user_id).username %>
-</p>
-
+</h4>
+<h4><%= l(comment.created_at, format: "%d.%m.%Y %H:%M") %></h4>
 <p>
 	<%= comment.body %>
 </p>

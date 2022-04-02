@@ -28,11 +28,6 @@
   </div>
 
   <div class="field">
-    <%= form.label :date %>
-    <%= form.date_select :date %>
-  </div>
-
-  <div class="field">
       <%= form.label :topic_id %>
       <%= form.select :topic_id, Topic.pluck(:name, :id) %>
   </div>
@@ -41,7 +36,7 @@
       <%= form.label :category_id %>
       <%= form.select :category_id, Category.pluck(:name, :id) %>
   </div>
-  
+
   <div>
   	<%= form.label :image %>
   	<%= form.file_field :image %>
