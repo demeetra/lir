@@ -51,6 +51,9 @@ a:link, a:visited, a:hover, a:active{
   color: #D8E0F3;
 }
 input{
+  margin-top: 30px;
+  margin-bottom: 20px;
+  width: 80%;
   border: none;
   border-bottom: 1px solid #083B4A;
 }
@@ -197,6 +200,8 @@ table{
   margin-bottom: 2%;
 }
 .compas>button {
+  height: 65px;
+  width: 22%;
   margin-left: 5%;
 }
 
