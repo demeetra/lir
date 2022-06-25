@@ -50,6 +50,13 @@ button:active{
 a:link, a:visited, a:hover, a:active{
   color: #D8E0F3;
 }
+input{
+  border: none;
+  border-bottom: 1px solid #083B4A;
+}
+table{
+  border: 1px solid #D8E0F3;
+}
 
 .menu{
   background-color: white;
@@ -174,32 +181,26 @@ a:link, a:visited, a:hover, a:active{
 }
 
 .compas{
-  padding-left: 5%;
   width: 100%;
-  padding-bottom: 9%;
+  padding-bottom: 18%;
   background-image: url('images/background-compas.svg');
   background-size: cover;
 }
-.input{
-  margin-top: 10%;
+.compas>h1{
+  margin-left: 5%;
+  margin-top: 1.5%;
 }
-input{
-  margin-top: 2%;
-  border: none;
-  border-bottom: 1px solid #083B4A;
+.input{
+  margin-left: 5%;
+  margin-top: 10%;
   width: 40%;
   margin-bottom: 2%;
 }
-button.button-compas{
-
+.compas>button {
+  margin-left: 5%;
 }
+
 .table{
   margin-left: 10%;
   margin-top: 40%;
-}
-table{
-  margin-top: 2%;
-  border: 1px solid #D8E0F3;
-  width: 80%;
-  height: 40%;
 }
