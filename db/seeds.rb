@@ -124,6 +124,66 @@ ports = [
 		workload:	"8/10",
 
 	},
+	{
+		name: "AGUILAS",
+		address: "Агилас",
+		tel: "34 968 411074",
+		coordinates: "37.40491° / -1.572461°",
+		rating: "7/10",
+		cost: "3/10",
+		electric: false,
+		wather: true,
+		workload:	"2/10",
+
+	},
+	{
+		name: "GARRUCHA",
+		address: "Гарруча",
+		tel: "34 950 460004",
+		coordinates: "37.20565° / -1.779184°",
+		rating: "8/10",
+		cost: "5/10",
+		electric: true,
+		wather: true,
+		workload:	"1/10",
+
+	},
+	{
+		name: "CARBONERAS",
+		address: "Карбонерас",
+		tel: "950236033",
+		coordinates: "36.97713° / -1.897202°",
+		rating: "7/10",
+		cost: "6/10",
+		electric: true,
+		wather: true,
+		workload:	"3/10",
+
+	},
+	{
+		name: "ALMERIA",
+		address: "Алмерия",
+		tel: "нет",
+		coordinates: "36.82997° / -2.473452°",
+		rating: "7/10",
+		cost: "5/10",
+		electric: true,
+		wather: true,
+		workload:	"5/10",
+
+	},
+	{
+		name: "BERMEO",
+		address: "Бермео",
+		tel: "34 94 688 3801",
+		coordinates: "43.41963° / -2.718019°",
+		rating: "6/10",
+		cost: "6/10",
+		electric: false,
+		wather: true,
+		workload:	"2/10",
+
+	},
 ]
 ports.each do |port|
 	Port.create!(port)

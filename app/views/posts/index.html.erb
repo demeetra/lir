@@ -4,17 +4,14 @@
 <div class="sidebar">
   <section class="category_each">
     <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-    <%= submit_tag "Search" %>
+    <%= text_field_tag :search, params[:search], placeholder: "Поиск" %>
+    <%= submit_tag "Поиск" %>
     <% end %>
 
     <% Category.where(display_in_sidebar: true).each do |cat| %>
       <h3 class="thirdly_button"><%= link_to cat.name, posts_path(category: cat.name) %></h3>
     <% end %>
 
-    <%# <% if user_signed_in? && current_user.isadmin == true %>
-      <%#  <%= react_component 'A_S_Add_Category', { href: new_category_path } %>
-      <%#<% end %>
   </section>
 <section class="category">
     <% Topic.where(display_in_sidebar: true).each do |cat| %>
