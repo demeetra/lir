@@ -3,6 +3,10 @@
 
 <div class="sidebar">
   <section class="category_each">
+    <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+    <%= submit_tag "Search" %>
+    <% end %>
 
     <% Category.where(display_in_sidebar: true).each do |cat| %>
       <h3 class="thirdly_button"><%= link_to cat.name, posts_path(category: cat.name) %></h3>
@@ -24,6 +28,10 @@
   </section>
   <%= react_component 'A_P_Post_Creation', { href: new_post_path } %>
 </div>
+
+  <% if params.has_key?(:search) && !@posts.present? %>
+    <p>There are no posts containing the term(s) '<%= params[:search] %>'.</p>
+  <% end %>
 
   <% @posts.each do |post| %>
       <div class="post_card post_card_hover" onclick="location.href='<%=post_path(post)%>';">

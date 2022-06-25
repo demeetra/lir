@@ -10,6 +10,8 @@ class PostsController < ApplicationController
       elsif params.has_key?(:category)
         @category = Category.find_by_name(params[:category])
         @posts = Post.where(category: @category)
+      elsif params.has_key?(:search)
+        @posts = Post.search(params[:search]).order("created_at DESC")
       else
         @posts = Post.all
       end
