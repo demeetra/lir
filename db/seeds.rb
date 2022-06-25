@@ -109,6 +109,26 @@ categories.each do |category|
 end
 scategorys = Category.all.collect{|c| c.id}
 
+Port.destroy_all
+puts "Destroyed all categories"
+ports = [
+	{
+		name: "CARTAGENA",
+		address: "Картахена",
+		tel: "968 12 12 13",
+		coordinates: "37.58017° / -0.9679291°",
+		rating: "8/10",
+		cost: "5/10",
+		electric: false,
+		wather: true,
+		workload:	"8/10",
+
+	},
+]
+ports.each do |port|
+	Port.create!(port)
+end
+
 
 Comment.destroy_all
 Post.destroy_all

@@ -5,11 +5,11 @@
 	</div> -->
 <h3 class="actuality">Оставить комментарий:</h3>
 	<div class="field">
-    <h2><%= current_user.username %></h2>
+    <h3><%= current_user.username %></h3>
 </div>
 
 	<div class="field">
-		<%= f.text_area :body %>
+		<p><%= f.text_area :body %><p/>
 	</div>
 		<div class="actions">
 		<%= f.submit %>

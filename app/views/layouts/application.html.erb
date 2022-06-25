@@ -13,7 +13,7 @@
 
   <body>
     <div class="top_menu">
-      <%= image_tag  'logo.svg' %>
+      <%= link_to image_tag('logo.svg'), root_path %>
       <%= react_component 'A_T_Ports', { href: ports_path } %>
       <%= react_component 'A_T_Posts', { href: posts_path } %>
 <div class="top_menu_accaunt">

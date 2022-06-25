@@ -76,7 +76,7 @@ end
 
 	</div>
 
-	<% if user_signed_in? %>
+	<% if user_signed_in?  && current_user.isadmin == true %>
 	<div class="buttons_post_card">
 		<%= react_component 'A_S_Edit_Post', { href: edit_post_path(@post) } %>
 	</div>
