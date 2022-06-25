@@ -52,8 +52,8 @@ end
 <div class="post_card post_card_show">
 <h3><%= @post.category.name %></h3>
 	<h3><%= @post.topic.name %></h3>
-	<h4><%= @post.author %></h4>
-	<h4><%= l(@post.created_at, format: "%d.%m.%Y %H:%M") %></h4>
+	<h4><%= @post.author %>  .  <%= l(@post.created_at, format: "%d.%m.%Y . %H:%M") %></h4>
+	<h4></h4>
 	<h1><%= truncate(@post.title,length:300, escape: false) %></h1>
 	<p><%= @post.content %></p>
 
@@ -61,13 +61,12 @@ end
 
 	<%= react_component 'M_Actuality', M_Actuality_params() %>
 	<%= react_component 'A_Star', A_Star_params() %>
+
+
 <div class="comments_posts">
 
-	<h4><%= @post.comments.count %> <%= (@post.comments.count) == 1 ? 'Comment' : 'Comments'%></h4>
-
-	<h3>Комментарии</h3>
+	<h3 class="actuality">Комментарии:           <%= @post.comments.count %> <%= (@post.comments.count) == 1 ? '' : ''%></h3>
 	<%= render @post.comments %>
-
 
 	<% if user_signed_in? %>
 	<%= render "comments/form" %>

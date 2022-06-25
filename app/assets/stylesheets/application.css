@@ -61,7 +61,7 @@ button > h3{
 }
 p{
   font-family: Proxima-Nova-Regular;
-  font-size: 14px;
+  font-size: 24px;
 }
 h4{
   font-family: Proxima-Nova-Regular;
@@ -100,18 +100,19 @@ h4{
  }
 
  .primary_button{
-   background-color: #336DE5;
+   margin-top: 32px;
+   background-color: #FE9041;
    color: white;
    border: none;
    width: auto;
    height: auto;
-   padding: 10px 20px;
+   padding: 16px 78px;
  }
  .primary_button:hover{
    background-color: #205C8F;
  }
  .primary_button:active{
-   background-color: #11404F;
+   background-color: #083B4A;
  }
  .secondary_button{
    display: inline-block;
@@ -119,10 +120,10 @@ h4{
    font-size: 18pt;
    background-color: white;
    color: #11404F;
-   border: 2px solid #11404F;
+   border: 1px solid #11404F;
    width: auto;
    height: auto;
-   padding: 10px 20px;
+   padding: 10px 30px;
  }
 
  .secondary_button:hover{
@@ -132,15 +133,30 @@ h4{
    background-color: #11404F;
    color: white;
  }
- .thirdly_button a{
+
+ .thirdly_button>a{
+   padding: 16px 32px;
+   background: none;
+   border: 1px solid #083B4A;
+   text-decoration: none;
+   color: #083B4A;
+   float: right;
+   margin: 16px;
+ }
+ .thirdly_button_2 a{
+   padding: 16px 32px;
    background: none;
    border: none;
+   border-bottom: 1px solid #083B4A;
    text-decoration: none;
-   color: #11404F;
+   color: #083B4A;
+   float: left;
+   width: 80%;
  }
  .thirdly_button a:hover{
    color: #A9A9A9;
  }
+
  .content{
    margin: 0 40px;
    padding: 20px;
@@ -154,7 +170,7 @@ h4{
 
 .footer{
   width: 100%;
-  height: 200px;
+  height: 160px;
   position: relative;
   display: inline-block;
   background-color: white;

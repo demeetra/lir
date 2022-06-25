@@ -4,7 +4,7 @@ class AButtonFooter extends React.Component {
   render () {
     return (
       <div>
-    
+
         <input className="secondary_button"
           type="submit"
           name="commit"

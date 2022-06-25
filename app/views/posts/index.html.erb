@@ -1,22 +1,23 @@
 <%= stylesheet_link_tag 'posts', media: 'all', 'data-turbolinks-track': 'reload' %>
 
+
 <div class="sidebar">
-  <section class="category">
+  <section class="category_each">
+
     <% Category.where(display_in_sidebar: true).each do |cat| %>
       <h3 class="thirdly_button"><%= link_to cat.name, posts_path(category: cat.name) %></h3>
     <% end %>
 
-    <% if user_signed_in? && current_user.isadmin == true %>
-      <%= react_component 'A_S_Add_Category', { href: new_category_path } %>
-    <% end %>
-</section>
-
+    <%# <% if user_signed_in? && current_user.isadmin == true %>
+      <%#  <%= react_component 'A_S_Add_Category', { href: new_category_path } %>
+      <%#<% end %>
+  </section>
 <section class="category">
     <% Topic.where(display_in_sidebar: true).each do |cat| %>
-      <h3 class="thirdly_button"><%= link_to cat.name, posts_path(topic: cat.name) %></h3>
+      <h3 class="thirdly_button_2"><%= link_to cat.name, posts_path(topic: cat.name) %></h3>
     <% end %>
 
-    <% if user_signed_in? %>
+    <% if user_signed_in? && current_user.isadmin == true%>
     <%= react_component 'A_S_Add_Topic', { href: new_topic_path } %>
     <% end %>
 
@@ -29,8 +30,8 @@
 
               <h3><%= post.category.name %></h3>
               <h3><%= post.topic.name %></h3>
-              <h4><%= post.author %></h4>
-              <h4><%= l(post.created_at, format: "%d.%m.%Y %H:%M") %></h4>
+              <h4><%= post.author %> .  <%= l(post.created_at, format: "%d.%m.%Y . %H:%M") %></h4>
+              <h4></h4>
               <%= image_tag(post.image.url, alt: 'Фото') if post.image? %>
               <h1><%= truncate(post.title, length: 40, separator: ' ', escape: false) %></h1>
 

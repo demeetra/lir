@@ -2,14 +2,13 @@
 	<b>Commenter:</b>
 	<%= comment.commenter %>
 </p> -->
+<div class="comment">
 
-<h4>
-  <%= User.find(comment.user_id).username %>
-</h4>
-<h4><%= l(comment.created_at, format: "%d.%m.%Y %H:%M") %></h4>
-<p>
-	<%= comment.body %>
-</p>
+<h4><%= User.find(comment.user_id).username %> . <%= l(comment.created_at, format: "%d.%m.%Y . %H:%M") %></h4>
+<p><%= comment.body %></p>
+<h4></h4>
+
+</div>
 
 <% if user_signed_in? && current_user.id == comment.user_id  %>
 <p>

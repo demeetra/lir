@@ -2,7 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
  //*= require_self
-
+.actuality{
+  margin-right: 30px;
+  color: #A9A9A9;
+}
+input.actuality{
+  margin-right: 10px;
+}
 .post_card{
   position: relative;
   display: inline-block;
@@ -21,6 +27,11 @@
   width: 20%;
   height: 100%;
   float: left;
+}
+.category_each{
+  position: fixed;
+  width: 72%;
+  height: auto;
 }
 .post_card > h1{
   margin-top: 0;
@@ -57,9 +68,7 @@
   float: left;
 }
 .category{
-
-    padding: 3% 10%;
-    border: #EAEAEA solid 1px;
+  width: 70%;
 }
 .category > h3{
   display: inline-block;
@@ -68,4 +77,7 @@
 }
 .comments_posts{
   flex-direction: column;
+}
+.comment{
+  border: 1px solid #11404F;
 }

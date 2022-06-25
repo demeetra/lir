@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 class ASAddTopic extends React.Component {
   render () {
     return (
-      <button className="secondary_button" onClick={event =>  window.location.href=this.props.href}><h3>+</h3></button>
+      <button className="secondary_button" onClick={event =>  window.location.href=this.props.href}><h3>Добавить тему +</h3></button>
     );
   }
 }
