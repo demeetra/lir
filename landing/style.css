@@ -17,15 +17,10 @@ body{
 h1{
   font-family: Lora-Regular;
   font-size: 64px;
-  width: 50%;
-  line-height: 113%;
 }
 h2{
   font-family: Proxima-Nova-Regular;
   font-size: 28px;
-  width: 450px;
-  margin-top: 26px;
-  line-height: 140%;
 }
 h3{
   font-family: Lora-Regular;
@@ -34,6 +29,23 @@ h3{
 h4{
   font-family: Proxima-Nova-Regular;
   font-size: 18px;
+}
+button{
+  background-color: #FE9041;
+  border: none;
+  color: white;
+  font-family: Proxima-Nova-Regular;
+  font-size: 24px;
+  padding: 0;
+}
+button:hover{
+  background-color: #205C8F;
+}
+button:active{
+  background-color: #083B4A;
+}
+a:link, a:visited, a:hover, a:active{
+  color: #D8E0F3;
 }
 
 .menu{
@@ -63,39 +75,40 @@ h4{
 .m_p1{
   margin-left: 45%;
 }
-.main_show{
-  margin-top: -45%;
-}
 
-button{
-  width: 314px;
-  height: 65px;
-  margin-top: 10%;
-  background-color: #FE9041;
-  border: none;
-  color: white;
-  font-family: Proxima-Nova-Regular;
-  font-size: 24px;
-}
-button:hover{
-  background-color: #205C8F;
-}
-button:active{
-  background-color: #083B4A;
+.main_show{
+  margin-top: 90px;
 }
 .lighthouse{
-  width: 710px;
-  padding-bottom: 59%;
+  width: 50%;
+  padding-bottom: 56%;
   background-image: url('images/lighthouse.svg');
   background-size: cover;
+  float: left;
 }
-a:link, a:visited, a:hover, a:active{
-  color: #D8E0F3;
+.main_text{
+  margin-left: 4%;
+  float: right;
+}
+.main_show>h1{
+  width: 42%;
+  margin-right: 4%;
+  margin-top: 7.3%;
+  line-height: 113%;
+}
+.main_show>h2{
+  width: 30%;
+  margin-right: 16%;
+  margin-top: 1.8%;
+  line-height: 140%;
+}
+.main_show>button{
+  height: 65px;
+  width: 22%;
+  margin-right: 24%;
+  margin-top: 20.5%;
 }
 
-.main_text{
-  margin-left: 53%;
-}
 
 .map-info-text{
   margin-left: 35%;
