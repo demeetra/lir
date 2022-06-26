@@ -1,3 +1,6 @@
+<%= stylesheet_link_tag 'ports', media: 'all', 'data-turbolinks-track': 'reload' %>
+<script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=API_KEY" type="text/javascript"></script>
+
 <p id="notice"><%= notice %></p>
 
 <h1>Список портов</h1>
@@ -13,6 +16,7 @@
   </thead>
 
   <tbody>
+    <div id="map-container"><div id="map-canvas"></div></div>
     <% @ports.each do |port| %>
       <tr>
         <td><%= port.name %></td>
@@ -29,3 +33,28 @@
 <br>
 
 <%= link_to 'Добавить порт', new_port_path %>
+
+<script type="text/javascript">
+async function initMap() {
+  ymaps.ready(init);
+  var myMap;
+  function init() {
+    myMap = new ymaps.Map("map-canvas", {
+      center: [43.238253, 76.945465], // map center
+      zoom: 8,
+      controls: []
+    });
+
+    <% @ports.each do |port| %>
+      myMap.geoObjects.add(new ymaps.Placemark(
+        [43.238053,76.945065],
+        {
+          balloonContent: <%= raw(port.name.to_json) %>,
+          iconContent: <%= port.rating %>,
+        },
+        {preset: "islands#icon"}));
+    <% end %>
+  };
+}
+initMap();
+</script>
