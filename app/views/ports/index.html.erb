@@ -39,7 +39,7 @@ async function initMap() {
   var myMap;
   function init() {
     myMap = new ymaps.Map("map-canvas", {
-      center: [43.238253, 76.945465], // map center
+      center: [37.20565, -1.779184],
       zoom: 8,
       controls: []
     });
@@ -50,7 +50,10 @@ async function initMap() {
         {
           balloonContent: <%= raw(port.name.to_json) %>,
         },
-        {preset: "islands#icon"}));
+        {
+          iconLayout: 'default#image',
+          iconImageHref: "<%= image_path('location.png') %>"
+        }));
     <% end %>
   };
 }
