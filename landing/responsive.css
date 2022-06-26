@@ -1,3 +1,44 @@
 @media screen and (max-width: 1000px){
-  
+  h1{
+    font-size: 28px;
+  }
+  h2{
+    font-size: 20px;
+  }
+  h3{
+    font-size: 16px;
+  }
+  h4{
+    font-size: 12px;
+  }
+  .lighthouse{
+    width: 100%;
+    float: none;
+    background-image: url(images/lighthouse_mobile.svg);
+  }
+  .main_show>h1, .main_show>h2{
+    width: 80%;
+  }
+  .main_show>button{
+    width: 90%;
+  }
+  .main_text{
+    float: none;
+  }
+.m_p_m{
+  display: none;
+}
+.logo_fon{
+  top: 22%;
+  width: 13%;
+  height: 53%;
+}
+.s_burger{
+  background-image: url(images/S_burger.svg);
+    width: 8%;
+    height: 22%;
+    background-size: cover;
+    float: right;
+    margin-top: 10%;
+}
 }

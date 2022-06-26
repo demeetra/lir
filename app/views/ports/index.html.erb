@@ -3,8 +3,6 @@
 
 <p id="notice"><%= notice %></p>
 
-<h1>Список портов</h1>
-
 <table>
   <thead>
     <tr>
@@ -16,7 +14,8 @@
   </thead>
 
   <tbody>
-    <div id="map-container"><div id="map-canvas"></div></div>
+
+    <div id="map-canvas"></div>
     <% @ports.each do |port| %>
       <tr>
         <td><%= port.name %></td>
