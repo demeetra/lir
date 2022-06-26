@@ -52,7 +52,7 @@ async function initMap() {
       myMap.geoObjects.add(new ymaps.Placemark(
         <%= raw(port.coordinates.gsub('°', '').split(' / ')) %>,
         {
-          balloonContentHeader: <%= raw(port.name.to_json) %>,
+          balloonContentHeader: '<%= link_to port.name, port %>',
           balloonContentBody: "<div class=ballon-body>" + <%= raw(port.address.to_json) %> + " оценка: <%= raw(port.rating) %> </div>",
         },
         {
