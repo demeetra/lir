@@ -46,10 +46,9 @@ async function initMap() {
 
     <% @ports.each do |port| %>
       myMap.geoObjects.add(new ymaps.Placemark(
-        [43.238053,76.945065],
+        <%= raw(port.coordinates.gsub('°', '').split(' / ')) %>,
         {
           balloonContent: <%= raw(port.name.to_json) %>,
-          iconContent: <%= port.rating %>,
         },
         {preset: "islands#icon"}));
     <% end %>
