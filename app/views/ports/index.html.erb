@@ -14,9 +14,13 @@
   </thead>
 
   <tbody>
-
-    <div id="map-canvas"></div>
+<div id="map-container">
+  <div id="map-canvas">
     <% @ports.each do |port| %>
+  </div>
+</div>
+
+
       <tr>
         <td><%= port.name %></td>
         <td><%= port.address %></td>
@@ -52,7 +56,7 @@ async function initMap() {
         },
         {
           iconLayout: 'default#image',
-          iconImageHref: "<%= image_path('location.png') %>"
+          iconImageHref: "<%= image_path('location.svg') %>"
         }));
     <% end %>
   };
