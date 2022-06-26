@@ -21,6 +21,7 @@
   }
   .main_show>button{
     width: 90%;
+    margin-right: 0%;
   }
   .main_text{
     float: none;
@@ -40,5 +41,19 @@
     background-size: cover;
     float: right;
     margin-top: 10%;
+}
+.map-info{
+  background-image: url(images/background-map-info-mobile.svg);
+  padding-bottom: 84%;
+}
+.map-info>h1 {
+    width: 100%;
+    margin-top: 10.5%;
+}
+.map-info>h2 {
+    width: 70%;
+}
+.map-info-text {
+    margin-left: 4%;
 }
 }
